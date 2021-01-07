@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../img/bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #f6f2ff;
+  font-family: "Baloo Da 2", cursive;
+  overflow: hidden;
+}
+
+body #header {
+  position: relative;
+  padding: 0.2em 1em;
+}
+
+body #header h1 {
+  margin: 0;
+  display: inline-block;
+}
+
+body #header #time {
+  position: absolute;
+  right: 0.5em;
+  font-size: 2em;
+}
+
+body .main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+  padding: 0 1em;
+}
+
+body .main .container {
+  background-color: rgba(36, 42, 51, 0.9);
+  border-radius: 0.4em;
+  padding: 1em;
+}
+
+body .main .container .section {
+  position: relative;
+}
+
+body .main .container .section .section-title {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #13131b;
+  background-color: #baffdf;
+  padding: 0 0.2em;
+  border-radius: 0.4em;
+  font-size: 0.7em;
+}
+
+body .main .container .section .section-content p {
+  margin: 0;
+}
+
+body .main .main-container {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2/4;
+}
+
+body .main .main-container .routes ul {
+  margin: 0;
+  padding: 0;
+}
+
+body .main .main-container .routes ul li {
+  list-style-type: none;
+  font-size: 2em;
+}
+
+body .main .main-container .routes ul li a {
+  color: #f6f2ff;
+  text-decoration: none;
+  padding-left: 1em;
+}
+
+body .main .main-container .routes ul li a:hover {
+  text-decoration: underline;
+  border-left: 3px solid #5dfdcb;
+}
+
+body .main .main-container .routes ul li a:focus {
+  outline: none;
+  border: none;
+}
+
+body .main .side-container .sysinfo .section-content .hw-title {
+  font-size: 2em;
+  font-family: "Fredoka One", cursive;
+  color: #39d2ed;
+}
+
+body .main .side-container .sysinfo .section-content .green {
+  color: #5dfdcb;
+}
+
+body .main .side-container .sysinfo .section-content .red {
+  color: #cc5a71;
+}
+
+body .main .side-container .sysinfo .section-content p {
+  margin: 0 0 0.5rem 0;
+}
+
+body .main .time-container .time .section-content #time {
+  font-size: 2em;
+}
+/*# sourceMappingURL=main.css.map */

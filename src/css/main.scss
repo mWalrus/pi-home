@@ -1,0 +1,122 @@
+$bg: #34344a;
+$cbg: rgba(36, 42, 51, 0.9);
+$cinfo: #13131b;
+$cinfobg: #baffdf;
+$st: #39d2ed;
+$fg: #f6f2ff;
+$up: #5dfdcb;
+$err: #cc5a71;
+
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../img/bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: $fg;
+  font-family: "Baloo Da 2", cursive;
+  overflow: hidden;
+  #header {
+    position: relative;
+    padding: 0.2em 1em;
+    h1 {
+      margin: 0;
+      display: inline-block;
+    }
+    #time {
+      position: absolute;
+      right: 0.5em;
+      font-size: 2em;
+    }
+  }
+  .main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    padding: 0 1em;
+    .container {
+      background-color: $cbg;
+      border-radius: 0.4em;
+      padding: 1em;
+      .section {
+        position: relative;
+        .section-title {
+          position: absolute;
+          right: 0;
+          top: 0;
+          color: $cinfo;
+          background-color: $cinfobg;
+          padding: 0 0.2em;
+          border-radius: 0.4em;
+          font-size: 0.7em;
+        }
+        .section-content {
+          p {
+            margin: 0;
+          }
+        }
+      }
+    }
+    .main-container {
+      grid-column: 2/4;
+      .routes {
+        ul {
+          margin: 0;
+          padding: 0;
+          li {
+            list-style-type: none;
+            font-size: 2em;
+            a {
+              color: $fg;
+              text-decoration: none;
+              padding-left: 1em;
+              &:hover {
+                text-decoration: underline;
+                border-left: 3px solid $up;
+              }
+              &:focus {
+                outline: none;
+                border: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    .side-container {
+      .sysinfo {
+        .section-content {
+          .hw-title {
+            font-size: 2em;
+            font-family: "Fredoka One", cursive;
+            color: $st;
+          }
+          .green {
+            color: $up;
+          }
+          .red {
+            color: $err;
+          }
+          p {
+            margin: 0 0 0.5rem 0;
+          }
+        }
+      }
+    }
+    .time-container {
+      // height: 50%;
+      .time {
+        .section-content {
+          #time {
+            font-size: 2em;
+          }
+        }
+      }
+    }
+  }
+}
