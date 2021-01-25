@@ -2,8 +2,8 @@ import { makeRe } from "minimatch";
 
 export class App {
   constructor() {
-    this.url = "http://85.229.117.218";
-    this.appid = "0ff4e2b9-4297-4cbc-998b-ad39bc213454";
+    this.url = "http://192.168.0.105";
+    this.port = "8080";
     this.routes;
     this.hwInfo;
     this.piInfo;
@@ -17,7 +17,7 @@ export class App {
   }
 
   async makeRequest(route) {
-    const req = await fetch(`${this.url}:8081/${route}?appid=${this.appid}`);
+    const req = await fetch(`${this.url}:${this.port}/${route}`);
     const res = await req.json();
     return res;
   }

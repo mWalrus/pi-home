@@ -1,122 +1,90 @@
-$bg: #34344a;
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap");
+
+$bg: #13131b;
 $cbg: rgba(36, 42, 51, 0.9);
-$cinfo: #13131b;
 $cinfobg: #baffdf;
 $st: #39d2ed;
 $fg: #f6f2ff;
 $up: #5dfdcb;
 $err: #cc5a71;
 
-@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap");
+$baloo: "Baloo Da 2", cursive;
+$fredoka: "Fredoka One", cursive;
 
 body {
+  background-color: $bg;
+  color: $fg;
+  font-family: $baloo;
   margin: 0;
   padding: 0;
-  background-image: url("../img/bg.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  color: $fg;
-  font-family: "Baloo Da 2", cursive;
-  overflow: hidden;
-  #header {
-    position: relative;
-    padding: 0.2em 1em;
+  width: 100vw;
+  .header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 4em;
     h1 {
       margin: 0;
-      display: inline-block;
+      padding: 0 1em;
     }
     #time {
-      position: absolute;
-      right: 0.5em;
       font-size: 2em;
+      justify-self: right;
+      padding: 0 1em;
     }
   }
   .main {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1em;
-    padding: 0 1em;
-    .container {
-      background-color: $cbg;
-      border-radius: 0.4em;
-      padding: 1em;
-      .section {
-        position: relative;
-        .section-title {
-          position: absolute;
-          right: 0;
-          top: 0;
-          color: $cinfo;
-          background-color: $cinfobg;
-          padding: 0 0.2em;
-          border-radius: 0.4em;
-          font-size: 0.7em;
-        }
-        .section-content {
-          p {
-            margin: 0;
-          }
-        }
+    background-color: $cbg;
+    border: 3px solid #000;
+    height: 60vh;
+    margin: auto;
+    padding: 1em;
+    width: 50%;
+    .main-header {
+      text-align: center;
+      span {
+        color: $st;
+        font-size: 2em;
       }
     }
-    .main-container {
-      grid-column: 2/4;
-      .routes {
-        ul {
-          margin: 0;
-          padding: 0;
-          li {
-            list-style-type: none;
-            font-size: 2em;
-            a {
-              color: $fg;
-              text-decoration: none;
-              padding-left: 1em;
-              &:hover {
-                text-decoration: underline;
-                border-left: 3px solid $up;
-              }
-              &:focus {
-                outline: none;
-                border: none;
-              }
-            }
-          }
-        }
-      }
-    }
-    .side-container {
-      .sysinfo {
-        .section-content {
-          .hw-title {
-            font-size: 2em;
-            font-family: "Fredoka One", cursive;
+    .routes {
+      list-style: none;
+      .route {
+        font-size: 1.5em;
+        a {
+          border-left-width: 2px;
+          border-left-style: solid;
+          border-left-color: transparent;
+          color: $fg;
+          cursor: pointer;
+          display: block;
+          margin-top: 0.3em;
+          padding-left: 0.4em;
+          text-decoration: none;
+          &:hover {
+            border-color: $st;
             color: $st;
-          }
-          .green {
-            color: $up;
-          }
-          .red {
-            color: $err;
-          }
-          p {
-            margin: 0 0 0.5rem 0;
+            text-decoration: underline;
           }
         }
       }
     }
-    .time-container {
-      // height: 50%;
-      .time {
-        .section-content {
-          #time {
-            font-size: 2em;
-          }
-        }
-      }
+  }
+  .sysinfo {
+    background-color: #000;
+    bottom: 0;
+    position: absolute;
+    text-align: right;
+    width: 100%;
+    .part {
+      border-left: 1px solid rgb(99, 99, 99);
+      padding: 0 0.4em;
+    }
+    .green {
+      color: $up;
+    }
+    .red {
+      color: $err;
     }
   }
 }

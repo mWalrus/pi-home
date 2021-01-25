@@ -1,56 +1,23 @@
 <template>
-  <div id="header">
+  <div class="header">
     <h1>Waalrus Homepage</h1>
     <span id="time">${time}</span>
   </div>
   <div class="main">
-    <div class="container side-container">
-      <div class="sysinfo section">
-        <span class="section-title">SYSTEM</span>
-        <div class="section-content">
-          <div class="hw-part">
-            <span class="hw-title">OS</span>
-            <p>${hwInfo.os}</p>
-          </div>
-          <div class="hw-part">
-            <span class="hw-title">CPU</span>
-            <p>${hwInfo.cpu}</p>
-          </div>
-          <div class="hw-part">
-            <span class="hw-title">MEM</span>
-            <p>${hwInfo.mem}</p>
-          </div>
-          <div class="hw-part">
-            <span class="hw-title">PIHOLE</span>
-            <p class="${updated ? 'green' : 'red'}">
-              ${updated ? 'Up-to-date' : 'Version mismatch'}
-            </p>
-            <p>C: ${piInfo.current}</p>
-            <p>L: ${piInfo.latest}</p>
-          </div>
-        </div>
-      </div>
+    <div class="main-header">
+      <span>apps</span>
     </div>
-    <div class="container main-container">
-      <div class="routes section">
-        <span class="section-title">APPS</span>
-        <div class="section-content">
-          <ul>
-            <li repeat.for="route of routes">
-              <a href="${url}/${route}" title="${route}">/${route}</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="general-container container">
-      <div class="general section">
-        <span class="section-title">GENERAL</span>
-        <div class="section-content">
-          <!-- <p id="time">${time}</p> -->
-        </div>
-      </div>
-    </div>
+    <ul class="routes">
+      <li repeat.for="route of routes" class="route">
+        <a href="${url}/${route}" title="${route}">/${route}</a>
+      </li>
+    </ul>
   </div>
-  <!-- <div id="footer">&copy;Waalrus homepage</div> -->
+  <footer class="sysinfo">
+    <span class="os part"><b>OS:</b> ${hwInfo.os}</span>
+    <span class="cpu part"><b>CPU:</b> ${hwInfo.cpu}</span>
+    <span class="mem part"><b>MEM:</b> ${hwInfo.mem}</span>
+    <span class="current part ${updated ? 'green' : 'red'}"><b>CURRENT:</b> ${piInfo.current}</span>
+    <span class="latest part ${updated ? 'green' : 'red'}"><b>LATEST:</b> ${piInfo.latest}</span>
+  </footer>
 </template>
