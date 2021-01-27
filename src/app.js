@@ -8,7 +8,7 @@ export class App {
     this.hwInfo;
     this.piInfo;
     this.updated = true;
-    this.time = new Date().toLocaleTimeString("SE");
+    this.time = this.tick();
 
     this.getRoutes();
     this.getHwInfo();
@@ -39,11 +39,16 @@ export class App {
   }
 
   startClock() {
-    this.clock = setInterval(() => this.tick(), 1000);
+    this.clock = setInterval(() => (this.time = this.tick()), 1000);
     document.addEventListener("unload", () => clearInterval(this.clock));
   }
 
   tick() {
-    this.time = new Date().toLocaleTimeString("SE");
+    let d = new Date();
+    d.setHours(d.getHours() + 1);
+    return d.toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
   }
 }

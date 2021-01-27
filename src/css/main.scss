@@ -1,77 +1,95 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
 
-$bg: #13131b;
-$cbg: rgba(36, 42, 51, 0.9);
-$cinfobg: #baffdf;
-$st: #39d2ed;
 $fg: #f6f2ff;
+$main-bg: #eef6ff;
+$footer-bg: #0d0d0e;
+$routebg: #0a0908;
 $up: #5dfdcb;
 $err: #cc5a71;
+$footer-title: #9999ff;
 
-$baloo: "Baloo Da 2", cursive;
 $fredoka: "Fredoka One", cursive;
+$baloo: "Baloo Da 2", cursive;
+$cutive: "Cutive Mono", monospace;
+$gugi: "Gugi", cursive;
 
 body {
-  background-color: $bg;
+  background-image: url(../img/snowmountain.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: $fg;
   font-family: $baloo;
   margin: 0;
   padding: 0;
-  width: 100vw;
+  overflow: hidden;
+  &::before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+  }
   .header {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     margin-bottom: 4em;
-    h1 {
-      margin: 0;
-      padding: 0 1em;
-    }
     #time {
+      display: block;
       font-size: 2em;
-      justify-self: right;
-      padding: 0 1em;
+      text-align: right;
+      padding: 0 0.5em;
     }
   }
   .main {
-    background-color: $cbg;
-    border: 3px solid #000;
-    height: 60vh;
-    margin: auto;
-    padding: 1em;
-    width: 50%;
-    .main-header {
+    height: 100%;
+    position: relative;
+    .header {
+      font-size: 5em;
       text-align: center;
-      span {
-        color: $st;
-        font-size: 2em;
-      }
+      font-family: $gugi;
+      margin: 0;
     }
     .routes {
+      display: block;
+      position: absolute;
       list-style: none;
+      padding: 0;
+      width: 25em;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, 100%);
+      :not(.route:first-of-type) {
+        margin-top: 0.5em;
+      }
       .route {
+        background-color: $fg;
         font-size: 1.5em;
+        margin-top: 0.3em;
+        width: 100%;
         a {
-          border-left-width: 2px;
-          border-left-style: solid;
-          border-left-color: transparent;
-          color: $fg;
+          color: #000;
           cursor: pointer;
           display: block;
-          margin-top: 0.3em;
-          padding-left: 0.4em;
+          line-height: 100%;
           text-decoration: none;
-          &:hover {
-            border-color: $st;
-            color: $st;
-            text-decoration: underline;
+          padding: 0.6em;
+          width: 100%;
+        }
+        &:hover {
+          background-color: $routebg;
+          a {
+            color: $fg;
           }
         }
       }
     }
   }
   .sysinfo {
-    background-color: #000;
+    background-color: $footer-bg;
     bottom: 0;
     position: absolute;
     text-align: right;
@@ -79,6 +97,9 @@ body {
     .part {
       border-left: 1px solid rgb(99, 99, 99);
       padding: 0 0.4em;
+      b {
+        color: $footer-title;
+      }
     }
     .green {
       color: $up;
@@ -86,5 +107,21 @@ body {
     .red {
       color: $err;
     }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body .main .routes {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 832px) {
+  .os,
+  .cpu,
+  .mem {
+    display: none;
+    width: 0;
+    height: 0;
   }
 }
