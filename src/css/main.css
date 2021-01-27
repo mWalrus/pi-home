@@ -24,10 +24,6 @@ body::before {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-body .header {
-  margin-bottom: 4em;
-}
-
 body .header #time {
   display: block;
   font-size: 2em;
@@ -40,11 +36,18 @@ body .main {
   position: relative;
 }
 
-body .main .header {
+body .main .main-header {
+  position: absolute;
   font-size: 5em;
-  text-align: center;
+  width: 100%;
+  min-width: 340px;
   font-family: "Gugi", cursive;
   margin: 0;
+  text-align: center;
+  left: 50%;
+  top: 30%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
 }
 
 body .main .routes {
@@ -55,8 +58,8 @@ body .main .routes {
   width: 25em;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, 100%);
-          transform: translate(-50%, 100%);
+  -webkit-transform: translate(-50%, 150%);
+          transform: translate(-50%, 150%);
 }
 
 body .main .routes :not(.route:first-of-type) {
@@ -116,6 +119,8 @@ body .sysinfo .red {
 @media only screen and (max-width: 600px) {
   body .main .routes {
     width: 80%;
+    -webkit-transform: translate(-50%, 120%);
+            transform: translate(-50%, 120%);
   }
 }
 
