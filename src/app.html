@@ -9,6 +9,11 @@
         <a href="${url}/${route}" title="${route}">/${route}</a>
       </li>
     </ul>
+    <ul class="fastlinks">
+      <li class="link" repeat.for="link of fastlinks">
+        <a href="${link.url}">${link.name}</a>
+      </li>
+    </ul>
   </div>
   <footer class="sysinfo">
     <span class="os part"><b>OS:</b> ${hwInfo.os}</span>

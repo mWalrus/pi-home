@@ -10,6 +10,25 @@ export class App {
     this.updated = true;
     this.time = this.tick();
 
+    this.fastlinks = [
+      {
+        name: "Twitch",
+        url: "https://twitch.tv/",
+      },
+      {
+        name: "Youtube",
+        url: "https://youtube.com/",
+      },
+      {
+        name: "Github",
+        url: "https://github.com/",
+      },
+      {
+        name: "Twitter",
+        url: "https://twitter.com/",
+      },
+    ];
+
     this.getRoutes();
     this.getHwInfo();
     this.getPiInfo();

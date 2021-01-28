@@ -26,6 +26,8 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  width: 100vw;
+  height: 100vh;
   &::before {
     content: " ";
     position: absolute;
@@ -36,7 +38,6 @@ body {
     background-color: rgba($color: #000000, $alpha: 0.6);
   }
   .header {
-    // margin-bottom: 4em;
     #time {
       display: block;
       font-size: 2em;
@@ -46,28 +47,23 @@ body {
   }
   .main {
     height: 100%;
-    position: relative;
     .main-header {
-      position: absolute;
       font-size: 5em;
       width: 100%;
       min-width: 340px;
       font-family: $gugi;
       margin: 0;
       text-align: center;
-      left: 50%;
-      top: 30%;
-      transform: translate(-50%, 50%);
     }
     .routes {
-      display: block;
       position: absolute;
       list-style: none;
       padding: 0;
       width: 25em;
+      margin: auto;
       left: 50%;
-      top: 50%;
-      transform: translate(-50%, 150%);
+      top: 25%;
+      transform: translateX(-50%);
       :not(.route:first-of-type) {
         margin-top: 0.5em;
       }
@@ -78,7 +74,6 @@ body {
         width: 100%;
         a {
           color: #000;
-          cursor: pointer;
           display: block;
           line-height: 100%;
           text-decoration: none;
@@ -89,6 +84,28 @@ body {
           background-color: $routebg;
           a {
             color: $fg;
+          }
+        }
+      }
+    }
+    .fastlinks {
+      position: absolute;
+      width: 60%;
+      left: 50%;
+      bottom: 20%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      transform: translateX(-50%);
+      text-align: center;
+      padding: 0;
+      .link {
+        list-style-type: none;
+        a {
+          color: $fg;
+          font-size: 1.3em;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
           }
         }
       }
@@ -116,10 +133,9 @@ body {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 540px) {
   body .main .routes {
     width: 80%;
-    transform: translate(-50%, 120%);
   }
 }
 
@@ -130,5 +146,10 @@ body {
     display: none;
     width: 0;
     height: 0;
+  }
+  body .main .fastlinks {
+    display: none;
+    height: 0;
+    width: 0;
   }
 }

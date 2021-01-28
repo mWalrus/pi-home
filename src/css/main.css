@@ -12,6 +12,8 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 
 body::before {
@@ -33,33 +35,27 @@ body .header #time {
 
 body .main {
   height: 100%;
-  position: relative;
 }
 
 body .main .main-header {
-  position: absolute;
   font-size: 5em;
   width: 100%;
   min-width: 340px;
   font-family: "Gugi", cursive;
   margin: 0;
   text-align: center;
-  left: 50%;
-  top: 30%;
-  -webkit-transform: translate(-50%, 50%);
-          transform: translate(-50%, 50%);
 }
 
 body .main .routes {
-  display: block;
   position: absolute;
   list-style: none;
   padding: 0;
   width: 25em;
+  margin: auto;
   left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, 150%);
-          transform: translate(-50%, 150%);
+  top: 25%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 body .main .routes :not(.route:first-of-type) {
@@ -75,7 +71,6 @@ body .main .routes .route {
 
 body .main .routes .route a {
   color: #000;
-  cursor: pointer;
   display: block;
   line-height: 100%;
   text-decoration: none;
@@ -89,6 +84,35 @@ body .main .routes .route:hover {
 
 body .main .routes .route:hover a {
   color: #f6f2ff;
+}
+
+body .main .fastlinks {
+  position: absolute;
+  width: 60%;
+  left: 50%;
+  bottom: 20%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  text-align: center;
+  padding: 0;
+}
+
+body .main .fastlinks .link {
+  list-style-type: none;
+}
+
+body .main .fastlinks .link a {
+  color: #f6f2ff;
+  font-size: 1.3em;
+  text-decoration: none;
+}
+
+body .main .fastlinks .link a:hover {
+  text-decoration: underline;
 }
 
 body .sysinfo {
@@ -116,11 +140,9 @@ body .sysinfo .red {
   color: #cc5a71;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 540px) {
   body .main .routes {
     width: 80%;
-    -webkit-transform: translate(-50%, 120%);
-            transform: translate(-50%, 120%);
   }
 }
 
@@ -131,6 +153,11 @@ body .sysinfo .red {
     display: none;
     width: 0;
     height: 0;
+  }
+  body .main .fastlinks {
+    display: none;
+    height: 0;
+    width: 0;
   }
 }
 /*# sourceMappingURL=main.css.map */
