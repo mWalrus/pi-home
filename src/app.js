@@ -27,6 +27,10 @@ export class App {
         name: "Twitter",
         url: "https://twitter.com/",
       },
+      {
+        name: "Protonmail",
+        url: "https://beta.protonmail.com/",
+      },
     ];
 
     this.getRoutes();
